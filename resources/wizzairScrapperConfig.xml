@@ -2,8 +2,7 @@
 
 <config>
 	<var-def name="WAsearch">
-		<xpath expression="//label[span[@class='flight-date']]//span[@class='price']/text()">
-			<html-to-xml>
+		<html-to-xml>
 				
 			<http url="http://wizzair.com/uk-UA/Search" method="post">
 				<http-header name="Origin">http://wizzair.com</http-header>
@@ -17,22 +16,22 @@
 					/wEPDwUBMGQYAQUeX19Db250cm9sc1JlcXVpcmVQb3N0QmFja0tleV9fFgEFWkNvbnRyb2xHcm91cFJpYmJvbkFub25Ib21lVmlldyRBdmFpbGFiaWxpdHlTZWFyY2hJbnB1dFJpYmJvbkFub25Ib21lVmlldyRTdHVkZXRTZW5pb3JHcm91cLcMW6Bfdi6XQ3jIOh46M/Uyyf+xnV2YpSj4opm7Zf8k
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$OriginStation">
-					IEV
+					<template>${fromAirport}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DestinationStation">
-					DWC
+					<template>${toAirport}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DepartureDate">
-					25.10.2013
+					<template>${fromDate}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountADT">
-					1
+					<template>${paxAdult}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountCHD">
-					0
+					<template>${paxChild}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountINFANT">
-					0
+					<template>${paxInfant}</template>
 				</http-param>
 				<http-param name="ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ButtonSubmit">
 					Шукати
@@ -40,6 +39,15 @@
 				
 			</http>
 		</html-to-xml>
+	</var-def>
+	<var-def name="pricesNoClub">
+		<xpath expression="//label[span[@class='flight-date']]//span[@class='flight-fare-nowizzclub']//span[@class='price']/text()">
+			<var name="WAsearch"/>		
+		</xpath>
+	</var-def>
+	<var-def name="pricesWAClub">
+		<xpath expression="//label[span[@class='flight-date']]//span[@class='flight-fare-wizzclub sub']//span[@class='price']/text()">
+			<var name="WAsearch"/>		
 		</xpath>
 	</var-def>
 	
