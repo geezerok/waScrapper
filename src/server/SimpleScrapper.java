@@ -10,7 +10,7 @@ public class SimpleScrapper {
 	
 	public static void main(String[] args){
 		try {
-		//TODO Move wizzairScrapperConfig.xml to classpath resourses
+		
 			
 			InputSource in =  new InputSource(SimpleScrapper.class.
 					getClassLoader().getResourceAsStream("wizzairScrapperConfig.xml"));
@@ -29,10 +29,10 @@ public class SimpleScrapper {
 			scrapper.setDebug(true);
 			scrapper.execute();
 
-			System.out.println("WizzAir club prices " + scrapper.getContext().getVar("pricesWAClub"));
-			System.out.println("No club prices " + scrapper.getContext().getVar("pricesNoClub"));
+			System.out.println(scrapper.getContext().getVar("list"));
+		
+		
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
 	}
