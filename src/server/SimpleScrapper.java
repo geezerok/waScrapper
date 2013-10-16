@@ -25,7 +25,7 @@ public class SimpleScrapper {
 			scrapper.addVariableToContext("fromDate", "10-11-2013");
 			scrapper.addVariableToContext("paxAdult", "1");
 			scrapper.addVariableToContext("paxChild", "0");
-			scrapper.addVariableToContext("fromInfant", "0");
+			scrapper.addVariableToContext("paxInfant", "0");
 			scrapper.setDebug(true);
 			scrapper.execute();
 
