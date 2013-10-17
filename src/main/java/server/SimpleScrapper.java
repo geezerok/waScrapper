@@ -22,7 +22,7 @@ public class SimpleScrapper {
 			scraper = new Scraper(config, "/");
 			scraper.addVariableToContext("fromAirport", "IEV");
 			scraper.addVariableToContext("toAirport", "GRO");
-			scraper.addVariableToContext("fromDate", "10-11-2013");
+			scraper.addVariableToContext("fromDate", "23/10/2013");
 			scraper.addVariableToContext("paxAdult", "1");
 			scraper.addVariableToContext("paxChild", "0");
 			scraper.addVariableToContext("paxInfant", "0");
